@@ -7,8 +7,8 @@ const NATIVE_ADDRESS = "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c";
 const DNZ_ADDRESS = "0x259A2a5191C8b0D60D4Ea610Ae30c23d38101b24";
 
 (async function () {
-  await Moralis.enableWeb3();
   await Moralis.initPlugins();
+  await Moralis.enableWeb3();
   dex = Moralis.Plugins.oneInch;
 })();
 
