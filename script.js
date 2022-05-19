@@ -1,10 +1,10 @@
-Moralis.initialize("FNXT2QIYDKpUpsWf4tPGe43GpPFr2QtEGAZxyQrF");
-Moralis.serverURL = "https://3ko31fibhm5w.usemoralis.com:2053/server";
+Moralis.initialize("jIRYmYJYApCjpCaQmehHuGYIsHDBszJraujWcmSi");
+Moralis.serverURL = "https://3kmcelpikheb.usemoralis.com:2053/server";
 
 let dex;
 
 const NATIVE_ADDRESS = "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c";
-const ONEINCH_ADDRESS = "0x111111111117dc0aa78b770fa6a738034120c302";
+const DNZ_ADDRESS = "0x259A2a5191C8b0D60D4Ea610Ae30c23d38101b24";
 
 (async function () {
   await Moralis.initPlugins();
@@ -17,7 +17,7 @@ async function swap() {
   const options = {
     chain: "bsc",
     fromTokenAddress: NATIVE_ADDRESS,
-    toTokenAddress: ONEINCH_ADDRESS,
+    toTokenAddress: DNZ_ADDRESS,
     amount: Number(Moralis.Units.ETH("0.01")),
     fromAddress: Moralis.User.current().get("ethAddress"),
     slippage: 1,
@@ -46,7 +46,7 @@ async function login() {
 async function getQuote() {
   let amt = document.getElementById("wbnbAmt").value;
   if (amt.length == 0) {
-    document.getElementById("oneinchRes").value = 0;
+    document.getElementById("dnzRes").value = 0;
   } else {
     amt = parseInt(amt);
 
@@ -54,13 +54,13 @@ async function getQuote() {
       const quote = await Moralis.Plugins.oneInch.quote({
         chain: "bsc", // The blockchain you want to use (eth/bsc/polygon)
         fromTokenAddress: NATIVE_ADDRESS, // The token you want to swap
-        toTokenAddress: ONEINCH_ADDRESS, // The token you want to receive
+        toTokenAddress: DNZ_ADDRESS, // The token you want to receive
         amount: amt,
       });
-      document.getElementById("oneinchRes").value =
+      document.getElementById("dnzRes").value =
         quote.toTokenAmount / 10 ** quote.toToken.decimals;
     } else {
-      document.getElementById("oneinchRes").value = 0;
+      document.getElementById("dnzRes").value = 0;
     }
   }
 }
