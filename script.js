@@ -4,7 +4,7 @@ Moralis.serverURL = "https://dq6kirqwge4c.usemoralis.com:2053/server";
 let dex;
 
 const NATIVE_ADDRESS = "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c";
-const DNZ_ADDRESS = "0x259A2a5191C8b0D60D4Ea610Ae30c23d38101b24";
+const DNZ_ADDRESS = "0x111111111117dC0aa78b770fA6A738034120C302";
 
 (async function () {
   await Moralis.initPlugins();
