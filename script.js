@@ -1,5 +1,5 @@
-Moralis.initialize("jIRYmYJYApCjpCaQmehHuGYIsHDBszJraujWcmSi");
-Moralis.serverURL = "https://3kmcelpikheb.usemoralis.com:2053/server";
+Moralis.initialize("2NCSfAkNPfDIMZUaKvAdZnwvzx8toRost5LlbawZ");
+Moralis.serverURL = "https://dq6kirqwge4c.usemoralis.com:2053/server";
 
 let dex;
 
