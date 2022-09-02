@@ -4,7 +4,7 @@ Moralis.serverURL = "https://dq6kirqwge4c.usemoralis.com:2053/server";
 let dex;
 
 const NATIVE_ADDRESS = "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c";
-const DNZ_ADDRESS = "0x111111111117dC0aa78b770fA6A738034120C302";
+const DNZ_ADDRESS = "0x259A2a5191C8b0D60D4Ea610Ae30c23d38101b24";
 
 (async function () {
   await Moralis.initPlugins();
@@ -50,6 +50,7 @@ async function getQuote() {
     amt = parseInt(amt);
 
     if (amt != 0) {
+      console.log(typeof amt);
       const quote = await Moralis.Plugins.oneInch.quote({
         chain: "bsc", // The blockchain you want to use (eth/bsc/polygon)
         fromTokenAddress: NATIVE_ADDRESS, // The token you want to swap
